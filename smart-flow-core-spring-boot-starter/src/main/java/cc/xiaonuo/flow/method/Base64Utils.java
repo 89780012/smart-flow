@@ -5,7 +5,6 @@ import cc.xiaonuo.common.exception.FlowException;
 import cc.xiaonuo.flow.annotation.FlowComponent;
 import cc.xiaonuo.flow.engine.FlowContext;
 import cc.xiaonuo.flow.model.PropertyParam;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 

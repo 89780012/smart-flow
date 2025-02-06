@@ -24,6 +24,8 @@ public class TokenParser {
 
     /**
      * 将sql文本片段中的参数替换成？ 并且将？对应的参数值按顺序保存起来
+     * @param text 要解析的文本
+     * @return 返回替换后的sql文本片段
      */
     public String parse(String text) {
         if (text == null || text.isEmpty()) {
