@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+cc.xiaonuo.database.config.DataSourceManager,\
+  cc.xiaonuo.flow.component.SqlComponentExecutor,\
+  cc.xiaonuo.transaction.SQLTransactionManager

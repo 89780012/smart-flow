@@ -1,0 +1,16 @@
+{
+  "properties": [
+    {
+      "name": "smart.flow.enabled",
+      "type": "java.lang.Boolean",
+      "description": "Whether to enable smart flow.",
+      "defaultValue": false
+    },
+    {
+      "name": "smart.flow.config-location",
+      "type": "java.lang.String",
+      "description": "Location of the flow.xml configuration file.",
+      "defaultValue": "classpath:flow.xml"
+    }
+  ]
+} 

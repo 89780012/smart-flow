@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+cc.xiaonuo.web.config.DynamicRouteRegistrar,\
+cc.xiaonuo.web.exception.GlobalExceptionHandler

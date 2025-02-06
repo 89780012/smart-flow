@@ -22,3 +22,11 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+smart-flow-common-spring-boot-starter/target/
+.idea/
+.flattened-pom.xml
+smart-flow-core-spring-boot-starter/target/
+smart-flow-database-mysql-spring-boot-starter/target/
+smart-flow-database-spring-boot-starter/target/
+smart-flow-web-mysql-spring-boot-starter/target/
+smart-flow-web-spring-boot-starter/target/
