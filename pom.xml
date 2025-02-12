@@ -235,10 +235,10 @@
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
                         <version>1.6</version>
-                        <configuration>
-                            <!-- 改成你自己的路径 -->
-                            <executable>C:\Program Files (x86)\GnuPG\bin\gpg.exe</executable>
-                        </configuration>
+<!--                        <configuration>-->
+<!--                            &lt;!&ndash; 改成你自己的路径 &ndash;&gt;-->
+<!--                            <executable>C:\Program Files (x86)\GnuPG\bin\gpg.exe</executable>-->
+<!--                        </configuration>-->
                         <executions>
                             <execution>
                                 <phase>verify</phase>
