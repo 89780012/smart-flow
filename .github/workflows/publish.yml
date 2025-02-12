@@ -15,7 +15,7 @@ jobs:
           distribution: 'temurin'
           java-package: 'jdk'
           # 填写你jar的jdk版本
-          java-version: '21'
+          java-version: '8.0.412+8'
           check-latest: true
           # 和你在settings.xml、pom.xml中填写的server id保持一致
           server-id: 'sonatype'
