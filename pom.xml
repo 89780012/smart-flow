@@ -249,7 +249,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <!-- 这里的serverId是之前在settings.xml中配置的 -->
-                    <publishingServerId>sonatype</publishingServerId>
+                    <publishingServerId>central</publishingServerId>
                     <tokenAuth>true</tokenAuth>
                 </configuration>
             </plugin>
