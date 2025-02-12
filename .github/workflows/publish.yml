@@ -18,7 +18,7 @@ jobs:
           java-version: '8.0.412+8'
           check-latest: true
           # 和你在settings.xml、pom.xml中填写的server id保持一致
-          server-id: 'sonatype'
+          server-id: 'central'
           server-username: OSSRH_USERNAME
           server-password: OSSRH_PASSWORD
           gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
