@@ -2,11 +2,10 @@
 # smart-flow
 当前项目是smart-flow-plugin的配套核心包，为插件生成配置提供解析、注册到web、执行等服务。
 
-
-demo后端项目地址：[smart-auth-back](https://github.com/89780012/smart-auth-back)
-demo前端项目地址：[smart-auth-front](https://github.com/89780012/smart-auth-front)
-idea插件端项目地址：[smart-flow-plugin](https://github.com/89780012/smart-flow-plugin)
-集成文档地址：[smart-doc](https://smartflow.fun/)
+- 集成文档地址：[smart-doc](https://smartflow.fun/)
+- demo后端项目地址：[smart-auth-back](https://github.com/89780012/smart-auth-back)
+- demo前端项目地址：[smart-auth-front](https://github.com/89780012/smart-auth-front)
+- idea插件端项目地址：[smart-flow-plugin](https://github.com/89780012/smart-flow-plugin)
 
 # smart-flow-plugin介绍
 
