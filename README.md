@@ -1,39 +1,62 @@
+
 # smart-flow
-
-#### 介绍
-{**以下是 Gitee 平台说明，您可以替换此简介**
-Gitee 是 OSCHINA 推出的基于 Git 的代码托管平台（同时支持 SVN）。专为开发者提供稳定、高效、安全的云端软件开发协作平台
-无论是个人、团队、或是企业，都能够用 Gitee 实现代码托管、项目管理、协作开发。企业项目请看 [https://gitee.com/enterprises](https://gitee.com/enterprises)}
-
-#### 软件架构
-软件架构说明
+当前项目是smart-flow-plugin的配套核心包，为插件生成配置提供解析、注册到web、执行等服务。
 
 
-#### 安装教程
+demo后端项目地址：[smart-auth-back](https://github.com/89780012/smart-auth-back)
+demo前端项目地址：[smart-auth-front](https://github.com/89780012/smart-auth-front)
+idea插件端项目地址：[smart-flow-plugin](https://github.com/89780012/smart-flow-plugin)
+集成文档地址：[smart-doc](https://smartflow.fun/)
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+# smart-flow-plugin介绍
 
-#### 使用说明
+基于IntelliJ IDEA平台开发的可视化流程编排插件，适用于Java SpringBoot项目开发。
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+## 功能特点
 
-#### 参与贡献
+- 可视化流程设计
+- 支持SpringBoot项目集成
+- 图形化流程编排界面
+- 支持自定义节点和连线
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+## 环境要求
+
+- IntelliJ IDEA 2023.1.7+
+- JDK 1.8+
+- SpringBoot 2.x+
+
+## 安装使用
+
+1. 在IDEA插件市场搜索"smart-flow-plugin"并安装
+2. 重启IDEA
+3. 在工具栏找到插件图标即可使用
 
 
-#### 特技
+## 界面展示
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+<div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+    <div style="width: 48%;">
+        <img src="docs/images/QQ20250211-215033.png" width="100%" alt="流程设计器界面"/>
+        <p align="center">流程设计器界面</p>
+    </div>
+    <div style="width: 48%;">
+        <img src="docs/images/QQ20250211-215114.png" width="100%" alt="流程组件界面"/>
+        <p align="center">流程组件界面</p>
+    </div>
+</div>
+
+<div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+    <div style="width: 48%;">
+        <img src="docs/images/QQ20250211-215221.png" width="100%" alt="配置界面"/>
+        <p align="center">组件配置界面</p>
+    </div>
+</div>
+
+
+## 贡献指南
+
+如果你有好的想法或者建议，欢迎提交Issue和Pull Request。
+
+## 许可证
+
+本项目采用 [Apache 2.0 许可证](LICENSE)。
