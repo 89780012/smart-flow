@@ -19,70 +19,82 @@ import java.util.Map;
 public class FlowParamConvert {
 
     public void convertDataType(BizDefinition biz, FlowContext context) {
-        if (biz.getParams() == null || biz.getParams().getParam() == null) {
+        if (biz.getParams() == null) {
             return;
         }
-        for (Param param : biz.getParams().getParam()) {
-            Object value = context.getParam(param.getName());
-            if (value == null) {
-                continue;
-            }
-            try {
-                int typeValue = Integer.parseInt(param.getType());
-                DataType dataType = DataType.getByValue(typeValue);
-                if (dataType == null) {
-                    throw new FlowException(String.format("参数[%s]的数据类型[%s]不支持",
-                            param.getName(), param.getType()));
-                }
 
-                Object convertedValue = null;
-                switch (dataType) {
-                    case STRING:
-                        convertedValue = convertToString(value);
-                        break;
-                    case INTEGER:
-                        convertedValue = convertToInteger(value);
-                        break;
-                    case FLOAT:
-                        convertedValue = convertToFloat(value);
-                        break;
-                    case DOUBLE:
-                        convertedValue = convertToDouble(value);
-                        break;
-                    case LONG:
-                        convertedValue = convertToLong(value);
-                        break;
-                    case BOOLEAN:
-                        convertedValue = convertToBoolean(value);
-                        break;
-                    case ARRAY:
-                        convertedValue = convertToArray(value);
-                        break;
-                    case OBJECT:
-                        convertedValue = convertToObject(value);
-                        break;
-                    case DATE:
-                        convertedValue = convertToDate(value);
-                        break;
-                    case BigDecimal:
-                        convertedValue = convertToBigDecimal(value);
-                        break;
-                    default:
-                        throw new FlowException(String.format("参数[%s]的数据类型[%s]不支持",
-                                param.getName(), dataType.getDisplayName()));
-                }
-
-                context.getParams().put(param.getName(), convertedValue);
-
-            } catch (NumberFormatException e) {
-                throw new FlowException(String.format("参数[%s]的数据类型值[%s]无效",
-                        param.getName(), param.getType()));
-            } catch (Exception e) {
-                throw new FlowException(String.format("参数[%s]转换失败: %s",
-                        param.getName(), e.getMessage()));
+        if(biz.getParams().getQueryParams() !=null){
+            for (Param param : biz.getParams().getQueryParams().getQueryParam()) {
+                convertDataType(param, context);
             }
         }
 
+        if(biz.getParams().getBodyParams() !=null){
+            for (Param param : biz.getParams().getBodyParams().getBodyParam()) {
+                convertDataType(param, context);
+            }
+        }
+    }
+
+    public void convertDataType(Param param, FlowContext context) {
+        Object value = context.getParam(param.getName());
+        if (value == null) {
+            return;
+        }
+        try {
+            int typeValue = Integer.parseInt(param.getType());
+            DataType dataType = DataType.getByValue(typeValue);
+            if (dataType == null) {
+                throw new FlowException(String.format("参数[%s]的数据类型[%s]不支持",
+                        param.getName(), param.getType()));
+            }
+
+            Object convertedValue = null;
+            switch (dataType) {
+                case STRING:
+                    convertedValue = convertToString(value);
+                    break;
+                case INTEGER:
+                    convertedValue = convertToInteger(value);
+                    break;
+                case FLOAT:
+                    convertedValue = convertToFloat(value);
+                    break;
+                case DOUBLE:
+                    convertedValue = convertToDouble(value);
+                    break;
+                case LONG:
+                    convertedValue = convertToLong(value);
+                    break;
+                case BOOLEAN:
+                    convertedValue = convertToBoolean(value);
+                    break;
+                case ARRAY:
+                    convertedValue = convertToArray(value);
+                    break;
+                case OBJECT:
+                    convertedValue = convertToObject(value);
+                    break;
+                case DATE:
+                    convertedValue = convertToDate(value);
+                    break;
+                case BigDecimal:
+                    convertedValue = convertToBigDecimal(value);
+                    break;
+                default:
+                    throw new FlowException(String.format("参数[%s]的数据类型[%s]不支持",
+                            param.getName(), dataType.getDisplayName()));
+            }
+
+            context.getParams().put(param.getName(), convertedValue);
+
+        } catch (NumberFormatException e) {
+            throw new FlowException(String.format("参数[%s]的数据类型值[%s]无效",
+                    param.getName(), param.getType()));
+        } catch (Exception e) {
+            throw new FlowException(String.format("参数[%s]转换失败: %s",
+                    param.getName(), e.getMessage()));
+        }
     }
 
     private String convertToString(Object value) {

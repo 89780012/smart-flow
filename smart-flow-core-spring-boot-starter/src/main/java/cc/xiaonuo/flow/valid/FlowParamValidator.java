@@ -4,6 +4,7 @@ import cc.xiaonuo.common.exception.FlowException;
 import cc.xiaonuo.flow.engine.FlowContext;
 import cc.xiaonuo.flow.model.BizDefinition;
 import cc.xiaonuo.flow.model.Param;
+import cc.xiaonuo.flow.model.QueryParams;
 import org.springframework.stereotype.Component;
 
 
@@ -16,12 +17,20 @@ public class FlowParamValidator {
      * @param context 流程上下文
      */
     public void validate(BizDefinition biz, FlowContext context) {
-        if (biz.getParams() == null || biz.getParams().getParam() == null) {
+        if (biz.getParams() == null ) {
             return;
         }
 
-        for (Param param : biz.getParams().getParam()) {
-            validateRequired(param, context);
+        if(biz.getParams().getQueryParams() != null){
+            for (Param param : biz.getParams().getQueryParams().getQueryParam()) {
+                validateRequired(param, context);
+            }
+        }
+
+        if(biz.getParams().getBodyParams() != null){
+            for (Param param : biz.getParams().getBodyParams().getBodyParam()) {
+                validateRequired(param, context);
+            }
         }
     }
 
