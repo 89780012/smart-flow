@@ -20,6 +20,7 @@ public class SQLTransactionManager implements FlowTransactionManager {
         if (TRANSACTION_CONNECTIONS.get() == null) {
             TRANSACTION_CONNECTIONS.set(new ArrayList<>());
         }
+
         conn.setAutoCommit(false);
         if(!TRANSACTION_CONNECTIONS.get().contains(conn)){
             TRANSACTION_CONNECTIONS.get().add(conn);
@@ -77,8 +78,7 @@ public class SQLTransactionManager implements FlowTransactionManager {
             TRANSACTION_CONNECTIONS.remove();
 
             //刪除key以flowId开头的数据
-             DBCache.connectionMap.remove(flowId);
-
+            DBCache.connectionMap.remove(flowId);
         }
     }
 }

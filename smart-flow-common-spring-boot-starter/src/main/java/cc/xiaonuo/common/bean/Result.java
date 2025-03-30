@@ -13,6 +13,13 @@ public class Result implements java.io.Serializable {
         return result;
     }
 
+    public static Result error(String message) {
+        Result result = new Result();
+        result.setCode(500);
+        result.setMessage(message);
+        return result;
+    }
+
     public static Result error(int code, String message) {
         Result result = new Result();
         result.setCode(code);

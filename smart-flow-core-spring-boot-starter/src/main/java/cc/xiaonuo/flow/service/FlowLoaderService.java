@@ -17,13 +17,10 @@ import java.util.Arrays;
 
 @Service("flowLoaderService")
 @Slf4j
-//@ManagedResource(objectName = "com.smart:type=FlowLoaderService,name=flowLoaderService")
 public class FlowLoaderService{
     private final Map<String, BizDefinition> flowCache = new ConcurrentHashMap<>();
     private final XmlMapper xmlMapper = new XmlMapper();
     private final Map<String, String> flowPathMapping = new ConcurrentHashMap<>();
-
-    private String[] scanLocations;
 
     @PostConstruct
     public void init(){
@@ -85,10 +82,6 @@ public class FlowLoaderService{
 
     public BizDefinition getFlow(String flowId) {
         return flowCache.get(flowId);
-    }
-
-    public void addFlow(String flowId, BizDefinition bizDefinition){
-        flowCache.put(flowId,bizDefinition);
     }
 
     public Map<String, BizDefinition> getAllFlows() {

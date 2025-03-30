@@ -25,7 +25,10 @@ public class BizDefinition implements Serializable {
     
     @JacksonXmlProperty(localName = "method")
     private String method;
-    
+
+    @JacksonXmlProperty(localName = "global_sql_transaction")
+    private String global_sql_transaction;
+
     @JacksonXmlProperty(localName = "params")
     private Params params;
     

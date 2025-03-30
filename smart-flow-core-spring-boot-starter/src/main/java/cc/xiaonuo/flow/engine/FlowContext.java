@@ -1,5 +1,7 @@
 package cc.xiaonuo.flow.engine;
 
+import cc.xiaonuo.flow.model.BizDefinition;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
@@ -14,12 +16,22 @@ public class FlowContext {
     public Map<String, Object> variables;
     public Map<String, Object> params;
 
+    private BizDefinition bizDefinition;
+
     public FlowContext(String flowId, Map<String, Object> params,HttpServletRequest request, HttpServletResponse response) {
         this.flowId = flowId;
         this.params = params;
         this.variables = new HashMap<>();
         this.request = request;
         this.response = response;
+    }
+
+    public void setBizDefinition(BizDefinition bizDefinition) {
+        this.bizDefinition = bizDefinition;
+    }
+
+    public BizDefinition getBizDefinition() {
+        return bizDefinition;
     }
 
     public HttpServletRequest getRequest() {

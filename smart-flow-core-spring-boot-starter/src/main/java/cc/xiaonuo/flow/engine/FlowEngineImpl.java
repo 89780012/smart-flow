@@ -138,6 +138,7 @@ public class FlowEngineImpl implements FlowEngine {
             throw new FlowException("流程不存在: " + flowId);
         }
 
+        context.setBizDefinition(biz);
         // 执行前对开始参数进行类型、必要性验证
         paramValidator.validate(biz, context);
         // 参数转换
