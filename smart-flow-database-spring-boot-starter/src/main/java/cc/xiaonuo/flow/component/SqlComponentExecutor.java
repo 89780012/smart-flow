@@ -112,7 +112,7 @@ public class SqlComponentExecutor extends AbstractComponentExecutor {
             }
 
             DatabaseType dbType = dataSourceManagerList.get(0).getDatabaseType(dataSourceKey);
-            if(context.getBizDefinition().getGlobal_sql_transaction().equals("true")){  //开启事务,则流程提交后才提交
+            if(context.getBizDefinition().getGlobal_sql_transaction()!=null && context.getBizDefinition().getGlobal_sql_transaction().equals("true")){  //开启事务,则流程提交后才提交
                 flowTransactionManagers.get(0).beginTransaction(conn);
             }else{
                 conn.setAutoCommit(true);  //每个sql执行完就提交
